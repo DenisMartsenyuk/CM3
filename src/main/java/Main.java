@@ -1,3 +1,4 @@
+import auxiliary.Interval;
 import auxiliary.SolutionResult;
 import functions.Function;
 import functions.FunctionFirst;
@@ -73,7 +74,7 @@ public class Main {
                 return;
             }
 
-            SolutionResult result = solutions.get(solutionIndex).calc(functions.get(functionIndex), a, b, accuracy);
+            SolutionResult result = solutions.get(solutionIndex).calc(functions.get(functionIndex), new Interval(a, b), accuracy);
             System.out.println("Значение интеграла: " + result.getResult());
             System.out.println("Число разбиения: " + result.getN());
 

@@ -1,5 +1,6 @@
 package solutions;
 
+import auxiliary.Interval;
 import functions.Function;
 
 public class SolutionRectangleRight extends Solution {
@@ -10,7 +11,9 @@ public class SolutionRectangleRight extends Solution {
     }
 
     @Override
-    protected double calcByParameters(Function function, double a, double b) {
+    protected double calcByInterval(Function function, Interval interval) {
+        double a = interval.getA();
+        double b = interval.getB();
         double h = (b - a) / n;
         double result = 0.0;
         for (double x = a + h; x <= b; x += h) {

@@ -1,5 +1,6 @@
 package solutions;
 
+import auxiliary.Interval;
 import functions.Function;
 
 public class SolutionSimpson extends Solution {
@@ -10,7 +11,9 @@ public class SolutionSimpson extends Solution {
     }
 
     @Override
-    protected double calcByParameters(Function function, double a, double b) {
+    protected double calcByInterval(Function function, Interval interval) {
+        double a = interval.getA();
+        double b = interval.getB();
         double h = (b - a) / n;
         double result = function.calcValue(a) + function.calcValue(b);
 
